@@ -1,5 +1,5 @@
 ﻿using System;
-using Entities;
+using UseCases.DTOs;
 
 namespace UseCases
 {
@@ -7,7 +7,10 @@ namespace UseCases
     {
         public void InkPen(Pen pen, Ink ink)
         {
-            pen.InkUp(ink);
+            Entities.Pen penEntity = DtoToEntityConverter.Convert(pen);
+            Entities.Ink inkEntity = DtoToEntityConverter.Convert(ink);
+
+            penEntity.InkUp(inkEntity);
         }
     }
 }

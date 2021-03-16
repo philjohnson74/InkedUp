@@ -4,7 +4,7 @@ namespace Entities
 {
     public class Pen
     {
-        public string PenId { get; set; }
+        public string Id { get; set; }
         public string Manufacturer { get; set; }
         public Ink Ink { get; set; }
 

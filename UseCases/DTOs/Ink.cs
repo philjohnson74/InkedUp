@@ -1,6 +1,5 @@
 ﻿using System;
-
-namespace Entities
+namespace UseCases.DTOs
 {
     public class Ink
     {
