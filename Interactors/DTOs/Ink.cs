@@ -1,5 +1,5 @@
 ﻿using System;
-namespace UseCases.DTOs
+namespace Interactors.DTOs
 {
     public class Ink : IInk
     {

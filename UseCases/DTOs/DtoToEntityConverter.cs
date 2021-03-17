@@ -3,7 +3,7 @@ namespace UseCases.DTOs
 {
     public static class DtoToEntityConverter
     {
-        public static Entities.Pen Convert(Pen pen)
+        public static Entities.Pen Convert(IPen pen)
         {
             Entities.Pen penEntity = new Entities.Pen()
             {
@@ -15,7 +15,7 @@ namespace UseCases.DTOs
             return penEntity;
         }
 
-        public static Entities.Ink Convert(Ink ink)
+        public static Entities.Ink Convert(IInk ink)
         {
             Entities.Ink inkEntity = new Entities.Ink()
             {
