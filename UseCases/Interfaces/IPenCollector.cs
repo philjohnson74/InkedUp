@@ -1,4 +1,4 @@
-﻿using UseCases.DTOs;
+﻿using UseCasesShared.Interfaces.DTOs;
 
 namespace UseCases
 {

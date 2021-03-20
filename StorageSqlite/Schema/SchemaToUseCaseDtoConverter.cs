@@ -1,22 +1,24 @@
 ﻿using System;
-namespace Interactors.DTOs
+using UseCasesShared.Interfaces.DTOs;
+
+namespace StorageSqlite.Schema
 {
-    public static class DtoToUseCaseDtoConverter
+    public class SchemaToUseCaseDtoConverter
     {
-        public static UseCasesShared.Interfaces.DTOs.IPen Convert(IPen pen)
-        { 
+        public static IPen Convert(Pen pen, IInk ink)
+        {
             UseCasesShared.DTOs.Pen useCasePen = new UseCasesShared.DTOs.Pen()
             {
                 Id = pen.Id,
                 Manufacturer = pen.Manufacturer,
                 Model = pen.Model,
-                Ink = Convert(pen.Ink)
+                Ink = ink
             };
 
             return useCasePen;
         }
 
-        public static UseCasesShared.Interfaces.DTOs.IInk Convert(IInk ink)
+        public static IInk Convert(Ink ink)
         {
             UseCasesShared.DTOs.Ink useCaseInk = new UseCasesShared.DTOs.Ink()
             {

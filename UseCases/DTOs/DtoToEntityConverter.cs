@@ -1,4 +1,6 @@
 ﻿using System;
+using UseCasesShared.Interfaces.DTOs;
+
 namespace UseCases.DTOs
 {
     public static class DtoToEntityConverter
@@ -9,6 +11,7 @@ namespace UseCases.DTOs
             {
                 Id = pen.Id,
                 Manufacturer = pen.Manufacturer,
+                Model = pen.Model,
                 Ink = Convert(pen.Ink)
             };
 

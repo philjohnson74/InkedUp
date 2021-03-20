@@ -1,11 +1,17 @@
 ﻿using System;
-namespace Interactors.DTOs
+using SQLite;
+
+namespace StorageSqlite.Schema
 {
-    public class Pen : IPen
+    public class Pen
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
         public string Manufacturer { get; set; }
+
         public string Model { get; set; }
-        public IInk Ink { get; set; }
+
+        public int InkId { get; set; }
     }
 }

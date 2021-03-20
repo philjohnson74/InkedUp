@@ -8,8 +8,8 @@ namespace Interactors
     {
         public void InkPen(IPen pen, IInk ink)
         {
-            UseCases.DTOs.IPen useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
-            UseCases.DTOs.IInk useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
+            UseCasesShared.Interfaces.DTOs.IPen useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
+            UseCasesShared.Interfaces.DTOs.IInk useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
 
             PenCollector penCollector = new PenCollector();
             penCollector.InkPen(useCasePen, useCaseInk);
