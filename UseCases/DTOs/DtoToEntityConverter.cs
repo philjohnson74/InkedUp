@@ -1,33 +1,34 @@
 ﻿using System;
+using UseCasesShared.DTOs;
 using UseCasesShared.Interfaces.DTOs;
 
 namespace UseCases.DTOs
 {
-    public static class DtoToEntityConverter
+    public static class EntityToDtoConverter
     {
-        public static Entities.Pen Convert(IPen pen)
+        public static IPen Convert(Entities.Pen penEntity)
         {
-            Entities.Pen penEntity = new Entities.Pen()
+            Pen useCasePen = new Pen()
             {
-                Id = pen.Id,
-                Manufacturer = pen.Manufacturer,
-                Model = pen.Model,
-                Ink = Convert(pen.Ink)
+                Id = penEntity.Id,
+                Manufacturer = penEntity.Manufacturer,
+                Model = penEntity.Model,
+                Ink = Convert(penEntity.Ink)
             };
 
-            return penEntity;
+            return useCasePen;
         }
 
-        public static Entities.Ink Convert(IInk ink)
+        public static IInk Convert(Entities.Ink inkEntity)
         {
-            Entities.Ink inkEntity = new Entities.Ink()
+            Ink useCaseInk = new Ink()
             {
-                Id = ink.Id,
-                Manufacturer = ink.Manufacturer,
-                Colour = ink.Colour
+                Id = inkEntity.Id,
+                Manufacturer = inkEntity.Manufacturer,
+                Colour = inkEntity.Colour
             };
 
-            return inkEntity;
+            return useCaseInk;
         }
     }
 }

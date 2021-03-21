@@ -20,7 +20,7 @@ namespace Interactors.DTOs
         {
             UseCasesShared.DTOs.Ink useCaseInk = new UseCasesShared.DTOs.Ink()
             {
-                Id = ink.Id,
+
                 Manufacturer = ink.Manufacturer,
                 Colour = ink.Colour
             };

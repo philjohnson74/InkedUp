@@ -8,11 +8,19 @@ using Xamarin.Forms;
 
 namespace InkedUpMobile
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        void ToolbarAddPen_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+
+        void ToolbarAddInk_Clicked(System.Object sender, System.EventArgs e)
+        {
         }
     }
 }
