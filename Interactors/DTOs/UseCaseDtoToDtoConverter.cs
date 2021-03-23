@@ -18,12 +18,17 @@ namespace Interactors.DTOs
 
         public static IInk Convert(UseCasesShared.Interfaces.DTOs.IInk useCaseInk)
         {
-            Ink ink = new Ink()
-            {
+            Ink ink = null;
 
-                Manufacturer = useCaseInk.Manufacturer,
-                Colour = useCaseInk.Colour
-            };
+            if (useCaseInk != null)
+            {
+                ink = new Ink()
+                {
+                    Id = useCaseInk.Id,
+                    Manufacturer = useCaseInk.Manufacturer,
+                    Colour = useCaseInk.Colour
+                };
+            }
 
             return ink;
         }

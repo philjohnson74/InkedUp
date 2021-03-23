@@ -7,5 +7,7 @@ namespace Interactors.DTOs
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public IInk Ink { get; set; }
+
+        public string DisplayName => $"{Manufacturer} - {Model}";
     }
 }

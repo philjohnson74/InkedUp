@@ -8,7 +8,7 @@
                   ItemSelected="pensListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Manufacturer}"/>
+                    <TextCell Text="{Binding DisplayName}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

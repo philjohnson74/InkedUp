@@ -152,7 +152,7 @@ namespace StorageSqlite
             using (SQLiteConnection conn = new SQLiteConnection(_databaseLocation))
             {
                 conn.CreateTable<Pen>();
-                int rows = conn.Delete(pen);
+                int rows = conn.Update(pen);
                 isSuccessful = rows > 0;
             }
 

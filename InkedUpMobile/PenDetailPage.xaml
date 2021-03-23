@@ -3,7 +3,22 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InkedUpMobile.PenDetailPage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ToolbarInkUp"
+                     Text="Ink Up"
+                     Clicked="ToolbarInkUp_Clicked"
+                     />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Entry x:Name="manufacturerEntry"
+                   Placeholder="Manufacturers name"/>
+        <Entry x:Name="modelEntry"
+                   Placeholder="Model of pen"/>
+        <Button Text="Update"
+                x:Name="updateButton"
+                Clicked="updateButton_Clicked"/>
+        <Button Text="Delete"
+                x:Name="DeleteButton"
+                Clicked="deleteButton_Clicked"/>
+    </StackLayout>
 </ContentPage>

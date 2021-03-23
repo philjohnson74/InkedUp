@@ -11,9 +11,11 @@ namespace StorageSqlite.Schema
             {
                 Id = useCasePen.Id,
                 Manufacturer = useCasePen.Manufacturer,
-                Model = useCasePen.Model,
-                InkId = useCasePen.Ink.Id
+                Model = useCasePen.Model
             };
+
+            if (useCasePen.Ink != null)
+                pen.InkId = useCasePen.Ink.Id;
 
             return pen;
         }

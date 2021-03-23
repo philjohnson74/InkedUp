@@ -17,10 +17,12 @@ namespace InkedUpMobile
 
         void ToolbarAddPen_Clicked(System.Object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new NewPenPage());
         }
 
         void ToolbarAddInk_Clicked(System.Object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new NewInkPage());
         }
     }
 }

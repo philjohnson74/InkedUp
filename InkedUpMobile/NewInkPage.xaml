@@ -3,7 +3,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InkedUpMobile.NewInkPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbarSave"
+                     Text="Save"
+                     Clicked="toolbarSave_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
+        <StackLayout>
+            <Entry x:Name="manufacturerEntry"
+                   Placeholder="Manufacturers name"/>
+            <Entry x:Name="colourEntry"
+                   Placeholder="Colour of ink"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
