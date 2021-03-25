@@ -13,8 +13,9 @@ namespace InkedUpMobile
         {
             InitializeComponent();
             SelectedPen = pen;
-            manufacturerEntry.Text = SelectedPen.Manufacturer;
-            modelEntry.Text = SelectedPen.Model;
+            ManufacturerEntry.Text = SelectedPen.Manufacturer;
+            ModelEntry.Text = SelectedPen.Model;
+            LabelDisplayName.Text = pen.DisplayNameWithInk;
         }
 
         void ToolbarInkUp_Clicked(System.Object sender, System.EventArgs e)
@@ -22,10 +23,10 @@ namespace InkedUpMobile
             Navigation.PushAsync(new InkUpPage(SelectedPen));
         }
 
-        void updateButton_Clicked(System.Object sender, System.EventArgs e)
+        void UpdateButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            SelectedPen.Manufacturer = manufacturerEntry.Text;
-            SelectedPen.Model = modelEntry.Text;
+            SelectedPen.Manufacturer = ManufacturerEntry.Text;
+            SelectedPen.Model = ModelEntry.Text;
 
             if (App.PenCollectorInteractor.UpdatesPenDetails(SelectedPen))
                 DisplayAlert("Success", "Pen successfully updated", "OK");
@@ -33,7 +34,7 @@ namespace InkedUpMobile
                 DisplayAlert("Failure", "Pen failed to be updated", "OK");
         }
 
-        void deleteButton_Clicked(System.Object sender, System.EventArgs e)
+        void DeleteButton_Clicked(System.Object sender, System.EventArgs e)
         {
             if (App.PenCollectorInteractor.GetsRidOfPen(SelectedPen))
                 DisplayAlert("Success", "Pen successfully deleted", "OK");

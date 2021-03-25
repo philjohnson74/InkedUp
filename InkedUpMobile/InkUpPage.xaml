@@ -4,6 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InkedUpMobile.InkUpPage">
     <ContentPage.Content>
-        
+        <StackLayout>
+            <Label x:Name="LabelPenDisplayName"/>
+            <Label x:Name="LabelCurrentInkDisplayName"/>
+            <Label>Select ink to ink pen up with:</Label>
+            <ListView x:Name="InksListView"
+                  ItemSelected="InksListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DisplayName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

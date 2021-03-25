@@ -6,5 +6,7 @@
         string Manufacturer { get; set; }
         string Model { get; set; }
         IInk Ink { get; set; }
+        string DisplayName { get; }
+        string DisplayNameWithInk { get; }
     }
 }

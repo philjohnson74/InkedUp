@@ -22,7 +22,7 @@ namespace InkedUpMobile
 
         void inksListView_ItemSelected(Object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedInk = inksListView.SelectedItem as Ink;
+            var selectedInk = inksListView.SelectedItem as IInk;
 
             if (selectedInk != null)
             {

@@ -10,15 +10,16 @@
                      />
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <Entry x:Name="manufacturerEntry"
+        <Label x:Name="LabelDisplayName" />
+        <Entry x:Name="ManufacturerEntry"
                    Placeholder="Manufacturers name"/>
-        <Entry x:Name="modelEntry"
+        <Entry x:Name="ModelEntry"
                    Placeholder="Model of pen"/>
         <Button Text="Update"
-                x:Name="updateButton"
-                Clicked="updateButton_Clicked"/>
+                x:Name="UpdateButton"
+                Clicked="UpdateButton_Clicked"/>
         <Button Text="Delete"
                 x:Name="DeleteButton"
-                Clicked="deleteButton_Clicked"/>
+                Clicked="DeleteButton_Clicked"/>
     </StackLayout>
 </ContentPage>

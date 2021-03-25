@@ -13,14 +13,15 @@ namespace InkedUpMobile
         {
             InitializeComponent();
             SelectedInk = ink;
-            manufacturerEntry.Text = SelectedInk.Manufacturer;
-            colourEntry.Text = SelectedInk.Colour;
+            ManufacturerEntry.Text = SelectedInk.Manufacturer;
+            ColourEntry.Text = SelectedInk.Colour;
+            LabelDisplayName.Text = SelectedInk.DisplayName;
         }
 
-        void updateButton_Clicked(System.Object sender, System.EventArgs e)
+        void UpdateButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            SelectedInk.Manufacturer = manufacturerEntry.Text;
-            SelectedInk.Colour = colourEntry.Text;
+            SelectedInk.Manufacturer = ManufacturerEntry.Text;
+            SelectedInk.Colour = ColourEntry.Text;
 
             if (App.PenCollectorInteractor.UpdatesInkDetails(SelectedInk))
                 DisplayAlert("Success", "Ink successfully updated", "OK");
@@ -28,7 +29,7 @@ namespace InkedUpMobile
                 DisplayAlert("Failure", "Ink failed to be updated", "OK");
         }
 
-        void deleteButton_Clicked(System.Object sender, System.EventArgs e)
+        void DeleteButton_Clicked(System.Object sender, System.EventArgs e)
         {
             if (App.PenCollectorInteractor.GetsRidOfInk(SelectedInk))
                 DisplayAlert("Success", "Ink successfully deleted", "OK");

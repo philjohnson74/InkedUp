@@ -11,9 +11,11 @@ namespace UseCases.DTOs
             {
                 Id = pen.Id,
                 Manufacturer = pen.Manufacturer,
-                Model = pen.Model,
-                Ink = Convert(pen.Ink)
+                Model = pen.Model
             };
+
+            if (pen.Ink != null)
+                penEntity.Ink = Convert(pen.Ink);
 
             return penEntity;
         }

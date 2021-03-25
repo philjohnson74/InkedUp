@@ -21,7 +21,7 @@ namespace InkedUpMobile
 
         void pensListView_ItemSelected(Object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedPen = pensListView.SelectedItem as Pen;
+            var selectedPen = pensListView.SelectedItem as IPen;
 
             if (selectedPen != null)
             {
