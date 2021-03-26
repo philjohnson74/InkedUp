@@ -7,24 +7,30 @@ namespace StorageSqlite.Schema
     {
         public static Pen Convert(IPen useCasePen)
         {
+            int penId;
+            int.TryParse(useCasePen.Id, out penId);
+
             Pen pen = new Pen()
             {
-                Id = useCasePen.Id,
+                Id = penId,
                 Manufacturer = useCasePen.Manufacturer,
                 Model = useCasePen.Model
             };
 
             if (useCasePen.Ink != null)
-                pen.InkId = useCasePen.Ink.Id;
+                pen.InkId = int.Parse(useCasePen.Ink.Id);
 
             return pen;
         }
 
         public static Ink Convert(IInk useCaseInk)
         {
+            int inkId;
+            int.TryParse(useCaseInk.Id, out inkId);
+
             Ink ink = new Ink()
             {
-                Id = useCaseInk.Id,
+                Id = inkId,
                 Manufacturer = useCaseInk.Manufacturer,
                 Colour = useCaseInk.Colour
             };

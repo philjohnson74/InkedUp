@@ -9,7 +9,7 @@ namespace StorageSqlite.Schema
         {
             UseCasesShared.DTOs.Pen useCasePen = new UseCasesShared.DTOs.Pen()
             {
-                Id = pen.Id,
+                Id = pen.Id.ToString(),
                 Manufacturer = pen.Manufacturer,
                 Model = pen.Model,
                 Ink = ink
@@ -22,7 +22,7 @@ namespace StorageSqlite.Schema
         {
             UseCasesShared.DTOs.Ink useCaseInk = new UseCasesShared.DTOs.Ink()
             {
-                Id = ink.Id,
+                Id = ink.Id.ToString(),
                 Manufacturer = ink.Manufacturer,
                 Colour = ink.Colour
             };

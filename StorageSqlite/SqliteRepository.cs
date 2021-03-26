@@ -103,7 +103,6 @@ namespace StorageSqlite
                 List<Pen> pens = conn.Table<Pen>().ToList();
                 foreach (Pen pen in pens)
                 {
-
                     useCasePens.Add(SchemaToUseCaseDtoConverter.Convert(pen, RetrieveInk(pen.InkId)));
                 }
             }
