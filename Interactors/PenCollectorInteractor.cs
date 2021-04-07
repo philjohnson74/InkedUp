@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Interactors.DTOs;
 using UseCases;
 using UseCasesShared.Interfaces.Storage;

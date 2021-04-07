@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SQLite;
 using StorageSqlite.Schema;
 using UseCasesShared.Interfaces.DTOs;
@@ -103,7 +102,8 @@ namespace StorageSqlite
                 List<Pen> pens = conn.Table<Pen>().ToList();
                 foreach (Pen pen in pens)
                 {
-                    useCasePens.Add(SchemaToUseCaseDtoConverter.Convert(pen, RetrieveInk(pen.InkId)));
+                    useCasePens.Add(SchemaToUseCaseDtoConverter.Convert(pen,
+                        RetrieveInk(pen.InkId)));
                 }
             }
 

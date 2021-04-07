@@ -1,5 +1,4 @@
-﻿using System;
-namespace Interactors.DTOs
+﻿namespace Interactors.DTOs
 {
     public class Pen : IPen
     {

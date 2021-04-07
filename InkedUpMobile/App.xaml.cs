@@ -1,9 +1,7 @@
-﻿using System;
-using Interactors;
+﻿using Interactors;
 using StorageSqlite;
 using UseCasesShared.Interfaces.Storage;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace InkedUpMobile
 {
