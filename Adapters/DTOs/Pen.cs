@@ -1,11 +1,11 @@
-﻿namespace Interactors.DTOs
+﻿namespace Adapters.DTOs
 {
-    public class Pen : IPen
+    public class Pen
     {
         public string Id { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
-        public IInk Ink { get; set; }
+        public Ink Ink { get; set; }
 
         public string DisplayName => $"{Manufacturer} - {Model}";
 

@@ -1,4 +1,4 @@
-﻿using Interactors;
+﻿using Adapters;
 using StorageSqlite;
 using UseCasesShared.Interfaces.Storage;
 using Xamarin.Forms;
@@ -7,7 +7,7 @@ namespace InkedUpMobile
 {
     public partial class App : Application
     {
-        public static IPenCollectorInteractor PenCollectorInteractor { get; set; }
+        public static IPenCollectorAdapter PenCollectorAdapter { get; set; }
 
         public App(string databaseLocation)
         {
@@ -16,7 +16,7 @@ namespace InkedUpMobile
             MainPage = new NavigationPage(new MainPage());
 
             IStorage storage = new SqliteRepository(databaseLocation);
-            PenCollectorInteractor = new PenCollectorInteractor(storage);
+            PenCollectorAdapter = new PenCollectorAdapter(storage);
         }
 
         protected override void OnStart()

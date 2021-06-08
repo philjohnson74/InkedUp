@@ -1,14 +1,14 @@
 ﻿using System;
-using Interactors.DTOs;
+using Adapters.DTOs;
 using Xamarin.Forms;
 
 namespace InkedUpMobile
 {
     public partial class InkUpPage : ContentPage
     {
-        public IPen PenToInkUp { get; set; }
+        public Pen PenToInkUp { get; set; }
 
-        public InkUpPage(IPen penToInkUp)
+        public InkUpPage(Pen penToInkUp)
         {
             InitializeComponent();
             PenToInkUp = penToInkUp;
@@ -18,17 +18,17 @@ namespace InkedUpMobile
             if(penToInkUp.Ink != null)
                 LabelCurrentInkDisplayName.Text = penToInkUp.Ink.DisplayName;
 
-            var inks = App.PenCollectorInteractor.ListsInks();
+            var inks = App.PenCollectorAdapter.ListsInks();
             InksListView.ItemsSource = inks;
         }
 
         void InksListView_ItemSelected(Object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedInk = InksListView.SelectedItem as IInk;
+            var selectedInk = InksListView.SelectedItem as Ink;
 
             if (selectedInk != null)
             {
-                if (App.PenCollectorInteractor.InkPen(PenToInkUp, selectedInk))
+                if (App.PenCollectorAdapter.InkPen(PenToInkUp, selectedInk))
                     DisplayAlert("Success", "Pen successfully inked", "OK");
                 else
                     DisplayAlert("Failure", "Pen failed to be inked", "OK");

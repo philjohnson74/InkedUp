@@ -1,9 +1,9 @@
 ﻿using System;
-namespace Interactors.DTOs
+namespace Adapters.DTOs
 {
     public static class DtoToUseCaseDtoConverter
     {
-        public static UseCasesShared.Interfaces.DTOs.IPen Convert(IPen pen)
+        public static UseCasesShared.Interfaces.DTOs.IPen Convert(Pen pen)
         { 
             UseCasesShared.DTOs.Pen useCasePen = new UseCasesShared.DTOs.Pen()
             {
@@ -16,7 +16,7 @@ namespace Interactors.DTOs
             return useCasePen;
         }
 
-        public static UseCasesShared.Interfaces.DTOs.IInk Convert(IInk ink)
+        public static UseCasesShared.Interfaces.DTOs.IInk Convert(Ink ink)
         {
             UseCasesShared.DTOs.Ink useCaseInk = null;
 

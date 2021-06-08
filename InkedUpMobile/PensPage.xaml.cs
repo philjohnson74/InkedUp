@@ -1,5 +1,5 @@
 ﻿using System;
-using Interactors.DTOs;
+using Adapters.DTOs;
 using Xamarin.Forms;
 
 namespace InkedUpMobile
@@ -15,13 +15,13 @@ namespace InkedUpMobile
         {
             base.OnAppearing();
 
-            var pens = App.PenCollectorInteractor.ListsPens();
+            var pens = App.PenCollectorAdapter.ListsPens();
             pensListView.ItemsSource = pens;
         }
 
         void pensListView_ItemSelected(Object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedPen = pensListView.SelectedItem as IPen;
+            var selectedPen = pensListView.SelectedItem as Pen;
 
             if (selectedPen != null)
             {

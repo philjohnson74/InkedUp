@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Interactors.DTOs;
+using Adapters.DTOs;
 using Xamarin.Forms;
 
 namespace InkedUpMobile
@@ -20,7 +20,7 @@ namespace InkedUpMobile
                 Model = modelEntry.Text
             };
 
-            if (App.PenCollectorInteractor.AcquiresPen(pen))
+            if (App.PenCollectorAdapter.AcquiresPen(pen))
                 DisplayAlert("Success", "Pen successfully added", "OK");
             else
                 DisplayAlert("Failure", "Pen failed to be added", "OK");

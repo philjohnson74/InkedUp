@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Interactors.DTOs;
+using Adapters.DTOs;
 using Xamarin.Forms;
 
 namespace InkedUpMobile
 {
     public partial class PenDetailPage : ContentPage
     {
-        public IPen SelectedPen { get; set; }
+        public Pen SelectedPen { get; set; }
 
-        public PenDetailPage(IPen pen)
+        public PenDetailPage(Pen pen)
         {
             InitializeComponent();
             SelectedPen = pen;
@@ -28,7 +28,7 @@ namespace InkedUpMobile
             SelectedPen.Manufacturer = ManufacturerEntry.Text;
             SelectedPen.Model = ModelEntry.Text;
 
-            if (App.PenCollectorInteractor.UpdatesPenDetails(SelectedPen))
+            if (App.PenCollectorAdapter.UpdatesPenDetails(SelectedPen))
                 DisplayAlert("Success", "Pen successfully updated", "OK");
             else
                 DisplayAlert("Failure", "Pen failed to be updated", "OK");
@@ -36,7 +36,7 @@ namespace InkedUpMobile
 
         void DeleteButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            if (App.PenCollectorInteractor.GetsRidOfPen(SelectedPen))
+            if (App.PenCollectorAdapter.GetsRidOfPen(SelectedPen))
                 DisplayAlert("Success", "Pen successfully deleted", "OK");
             else
                 DisplayAlert("Failure", "Pen failed to be deleted", "OK");

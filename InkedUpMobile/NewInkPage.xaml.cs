@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Interactors.DTOs;
+using Adapters.DTOs;
 using Xamarin.Forms;
 
 namespace InkedUpMobile
@@ -20,7 +20,7 @@ namespace InkedUpMobile
                 Colour = colourEntry.Text
             };
 
-            if (App.PenCollectorInteractor.AcquiresInk(ink))
+            if (App.PenCollectorAdapter.AcquiresInk(ink))
                 DisplayAlert("Success", "Ink successfully added", "OK");
             else
                 DisplayAlert("Failure", "Ink failed to be added", "OK");

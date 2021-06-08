@@ -16,6 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StorageSqlite\StorageSqlite.csproj" />
-    <ProjectReference Include="..\Interactors\Interactors.csproj" />
+    <ProjectReference Include="..\Adapters\Adapters.csproj" />
   </ItemGroup>
 </Project>

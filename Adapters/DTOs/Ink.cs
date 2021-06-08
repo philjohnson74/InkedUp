@@ -1,6 +1,6 @@
-﻿namespace Interactors.DTOs
+﻿namespace Adapters.DTOs
 {
-    public class Ink : IInk
+    public class Ink
     {
         public string Id { get; set; }
         public string Manufacturer { get; set; }
