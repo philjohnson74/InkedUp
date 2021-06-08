@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using SQLite;
 using StorageSqlite.Schema;
-using UseCasesShared.Interfaces.DTOs;
 using UseCasesShared.Interfaces.Storage;
 
 namespace StorageSqlite
@@ -15,7 +14,7 @@ namespace StorageSqlite
             _databaseLocation = databaseLocation;
         }
 
-        public bool CreateInk(IInk useCaseInk)
+        public bool CreateInk(UseCasesShared.DTOs.Ink useCaseInk)
         {
             bool isSuccessful;
             Ink ink = UseCaseDtoToSchemaConverter.Convert(useCaseInk);
@@ -30,7 +29,7 @@ namespace StorageSqlite
             return isSuccessful;
         }
 
-        public bool CreatePen(IPen useCasePen)
+        public bool CreatePen(UseCasesShared.DTOs.Pen useCasePen)
         {
             bool isSuccessful;
             Pen pen = UseCaseDtoToSchemaConverter.Convert(useCasePen);
@@ -45,7 +44,7 @@ namespace StorageSqlite
             return isSuccessful;
         }
 
-        public bool DeleteInk(IInk useCaseInk)
+        public bool DeleteInk(UseCasesShared.DTOs.Ink useCaseInk)
         {
             bool isSuccessful;
             Ink ink = UseCaseDtoToSchemaConverter.Convert(useCaseInk);
@@ -60,7 +59,7 @@ namespace StorageSqlite
             return isSuccessful;
         }
 
-        public bool DeletePen(IPen useCasePen)
+        public bool DeletePen(UseCasesShared.DTOs.Pen useCasePen)
         {
             bool isSuccessful;
             Pen pen = UseCaseDtoToSchemaConverter.Convert(useCasePen);
@@ -75,9 +74,9 @@ namespace StorageSqlite
             return isSuccessful;
         }
 
-        public List<IInk> RetrieveInks()
+        public List<UseCasesShared.DTOs.Ink> RetrieveInks()
         {
-            List<IInk> useCaseInks = new List<IInk>();
+            var useCaseInks = new List<UseCasesShared.DTOs.Ink>();
 
             using (SQLiteConnection conn = new SQLiteConnection(_databaseLocation))
             {
@@ -92,9 +91,9 @@ namespace StorageSqlite
             return useCaseInks;
         }
 
-        public List<IPen> RetrievePens()
+        public List<UseCasesShared.DTOs.Pen> RetrievePens()
         {
-            List<IPen> useCasePens = new List<IPen>();
+            var useCasePens = new List<UseCasesShared.DTOs.Pen>();
 
             using (SQLiteConnection conn = new SQLiteConnection(_databaseLocation))
             {
@@ -110,9 +109,9 @@ namespace StorageSqlite
             return useCasePens;
         }
 
-        private IInk RetrieveInk(int inkId)
+        private UseCasesShared.DTOs.Ink RetrieveInk(int inkId)
         {
-            IInk useCaseInk = null;
+            UseCasesShared.DTOs.Ink useCaseInk = null;
 
             using (SQLiteConnection conn = new SQLiteConnection(_databaseLocation))
             {
@@ -128,7 +127,7 @@ namespace StorageSqlite
             return useCaseInk;
         }
 
-        public bool UpdateInk(IInk useCaseInk)
+        public bool UpdateInk(UseCasesShared.DTOs.Ink useCaseInk)
         {
             bool isSuccessful;
             Ink ink = UseCaseDtoToSchemaConverter.Convert(useCaseInk);
@@ -143,7 +142,7 @@ namespace StorageSqlite
             return isSuccessful;
         }
 
-        public bool UpdatePen(IPen useCasePen)
+        public bool UpdatePen(UseCasesShared.DTOs.Pen useCasePen)
         {
             bool isSuccessful;
             Pen pen = UseCaseDtoToSchemaConverter.Convert(useCasePen);

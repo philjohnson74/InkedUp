@@ -1,8 +1,6 @@
-﻿using UseCasesShared.Interfaces.DTOs;
-
-namespace UseCasesShared.DTOs
+﻿namespace UseCasesShared.DTOs
 {
-    public class Ink : IInk
+    public class Ink
     {
         public string Id { get; set; }
         public string Manufacturer { get; set; }

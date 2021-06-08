@@ -3,7 +3,7 @@ namespace Adapters.DTOs
 {
     public static class DtoToUseCaseDtoConverter
     {
-        public static UseCasesShared.Interfaces.DTOs.IPen Convert(Pen pen)
+        public static UseCasesShared.DTOs.Pen Convert(Pen pen)
         { 
             UseCasesShared.DTOs.Pen useCasePen = new UseCasesShared.DTOs.Pen()
             {
@@ -16,7 +16,7 @@ namespace Adapters.DTOs
             return useCasePen;
         }
 
-        public static UseCasesShared.Interfaces.DTOs.IInk Convert(Ink ink)
+        public static UseCasesShared.DTOs.Ink Convert(Ink ink)
         {
             UseCasesShared.DTOs.Ink useCaseInk = null;
 

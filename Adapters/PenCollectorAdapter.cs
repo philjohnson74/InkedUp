@@ -7,35 +7,35 @@ namespace Adapters
 {
     public class PenCollectorAdapter : IPenCollectorAdapter
     {
-        public IPenCollector PenCollector { get; set; }
+        public IPenCollectorInteractor PenCollectorInteractor { get; set; }
 
         public PenCollectorAdapter(IStorage storage)
         {
-            PenCollector = new PenCollector(storage);
+            PenCollectorInteractor = new PenCollectorInteractor(storage);
         }
 
         public bool InkPen(Pen pen, Ink ink)
         {
             var useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
             var useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
-            return PenCollector.InkPen(useCasePen, useCaseInk);
+            return PenCollectorInteractor.InkPen(useCasePen, useCaseInk);
         }
 
         public bool AcquiresInk(Ink ink)
         {
             var useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
-            return PenCollector.AcquiresInk(useCaseInk);
+            return PenCollectorInteractor.AcquiresInk(useCaseInk);
         }
 
         public bool AcquiresPen(Pen pen)
         {
             var useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
-            return PenCollector.AcquiresPen(useCasePen);
+            return PenCollectorInteractor.AcquiresPen(useCasePen);
         }
 
         public List<Ink> ListsInks()
         {
-            var useCaseInks = PenCollector.ListsInks();
+            var useCaseInks = PenCollectorInteractor.ListsInks();
             var inks = new List<Ink>();
             foreach(var useCaseInk in useCaseInks)
             {
@@ -46,7 +46,7 @@ namespace Adapters
 
         public List<Pen> ListsPens()
         {
-            var useCasePens = PenCollector.ListsPens();
+            var useCasePens = PenCollectorInteractor.ListsPens();
             var pens = new List<Pen>();
             foreach (var useCaseInk in useCasePens)
             {
@@ -58,25 +58,25 @@ namespace Adapters
         public bool UpdatesInkDetails(Ink ink)
         {
             var useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
-            return PenCollector.UpdatesInkDetails(useCaseInk);
+            return PenCollectorInteractor.UpdatesInkDetails(useCaseInk);
         }
 
         public bool UpdatesPenDetails(Pen pen)
         {
             var useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
-            return PenCollector.UpdatesPenDetails(useCasePen);
+            return PenCollectorInteractor.UpdatesPenDetails(useCasePen);
         }
 
         public bool GetsRidOfInk(Ink ink)
         {
             var useCaseInk = DtoToUseCaseDtoConverter.Convert(ink);
-            return PenCollector.GetsRidOfInk(useCaseInk);
+            return PenCollectorInteractor.GetsRidOfInk(useCaseInk);
         }
 
         public bool GetsRidOfPen(Pen pen)
         {
             var useCasePen = DtoToUseCaseDtoConverter.Convert(pen);
-            return PenCollector.GetsRidOfPen(useCasePen);
+            return PenCollectorInteractor.GetsRidOfPen(useCasePen);
         }
     }
 }

@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using UseCases.DTOs;
-using UseCasesShared.Interfaces.DTOs;
+using UseCasesShared.DTOs;
 using UseCasesShared.Interfaces.Storage;
 
 namespace UseCases
 {
-    public class PenCollector : IPenCollector
+    public class PenCollectorInteractor : IPenCollectorInteractor
     {
         public IStorage Storage { get; set; }
 
-        public PenCollector(IStorage storage)
+        public PenCollectorInteractor(IStorage storage)
         {
             Storage = storage;
         }
 
-        public bool InkPen(IPen pen, IInk ink)
+        public bool InkPen(Pen pen, Ink ink)
         {
             Entities.Pen penEntity = DtoToEntityConverter.Convert(pen);
             Entities.Ink inkEntity = DtoToEntityConverter.Convert(ink);
@@ -26,42 +26,42 @@ namespace UseCases
             return Storage.UpdatePen(pen);
         }
 
-        public bool AcquiresInk(IInk ink)
+        public bool AcquiresInk(Ink ink)
         {
             return Storage.CreateInk(ink);
         }
 
-        public bool AcquiresPen(IPen pen)
+        public bool AcquiresPen(Pen pen)
         {
             return Storage.CreatePen(pen);
         }
 
-        public List<IInk> ListsInks()
+        public List<Ink> ListsInks()
         {
             return Storage.RetrieveInks();
         }
 
-        public List<IPen> ListsPens()
+        public List<Pen> ListsPens()
         {
             return Storage.RetrievePens();
         }
 
-        public bool UpdatesInkDetails(IInk ink)
+        public bool UpdatesInkDetails(Ink ink)
         {
             return Storage.UpdateInk(ink);
         }
 
-        public bool UpdatesPenDetails(IPen pen)
+        public bool UpdatesPenDetails(Pen pen)
         {
             return Storage.UpdatePen(pen);
         }
 
-        public bool GetsRidOfInk(IInk ink)
+        public bool GetsRidOfInk(Ink ink)
         {
             return Storage.DeleteInk(ink);
         }
 
-        public bool GetsRidOfPen(IPen pen)
+        public bool GetsRidOfPen(Pen pen)
         {
             return Storage.DeletePen(pen);
         }

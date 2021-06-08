@@ -1,11 +1,10 @@
 ﻿using System;
-using UseCasesShared.Interfaces.DTOs;
 
 namespace StorageSqlite.Schema
 {
     public class SchemaToUseCaseDtoConverter
     {
-        public static IPen Convert(Pen pen, IInk ink)
+        public static UseCasesShared.DTOs.Pen Convert(Pen pen, UseCasesShared.DTOs.Ink ink)
         {
             UseCasesShared.DTOs.Pen useCasePen = new UseCasesShared.DTOs.Pen()
             {
@@ -14,11 +13,11 @@ namespace StorageSqlite.Schema
                 Model = pen.Model,
                 Ink = ink
             };
-
+            
             return useCasePen;
         }
 
-        public static IInk Convert(Ink ink)
+        public static UseCasesShared.DTOs.Ink Convert(Ink ink)
         {
             UseCasesShared.DTOs.Ink useCaseInk = new UseCasesShared.DTOs.Ink()
             {

@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
-using UseCasesShared.Interfaces.DTOs;
+using UseCasesShared.DTOs;
 
 namespace UseCasesShared.Interfaces.Storage
 {
     public interface IStorage
     {
-        bool CreatePen(IPen pen);
-        List<IPen> RetrievePens();
-        bool UpdatePen(IPen pen);
-        bool DeletePen(IPen pen);
+        bool CreatePen(Pen pen);
+        List<Pen> RetrievePens();
+        bool UpdatePen(Pen pen);
+        bool DeletePen(Pen pen);
 
-        bool CreateInk(IInk ink);
-        List<IInk> RetrieveInks();
-        bool UpdateInk(IInk ink);
-        bool DeleteInk(IInk ink);
+        bool CreateInk(Ink ink);
+        List<Ink> RetrieveInks();
+        bool UpdateInk(Ink ink);
+        bool DeleteInk(Ink ink);
     }
 }

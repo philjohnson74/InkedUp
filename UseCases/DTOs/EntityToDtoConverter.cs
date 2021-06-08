@@ -1,11 +1,11 @@
 ﻿using System;
-using UseCasesShared.Interfaces.DTOs;
+using UseCasesShared.DTOs;
 
 namespace UseCases.DTOs
 {
     public static class DtoToEntityConverter
     {
-        public static Entities.Pen Convert(IPen pen)
+        public static Entities.Pen Convert(Pen pen)
         {
             Entities.Pen penEntity = new Entities.Pen()
             {
@@ -20,7 +20,7 @@ namespace UseCases.DTOs
             return penEntity;
         }
 
-        public static Entities.Ink Convert(IInk ink)
+        public static Entities.Ink Convert(Ink ink)
         {
             Entities.Ink inkEntity = new Entities.Ink()
             {
